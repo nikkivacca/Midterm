@@ -20,25 +20,20 @@ def main():
 
    students = ['John','James','Jill','Jack','Joanne']
 #2) create an instance of the Register object for each student in the students list using a for loop 
-   registration_list = []
-   number = 0 
    for s in students:
-      student = cc.Register(s, adv_python.get_crn())
-      registration_list.append(student)
+      s = cc.Register(s, adv_python.get_crn())
       
 
 #3) print student name, course name, CRN number, and seats left for each iteration using ONLY get methods
 
-
-
-   if adv_python.get_status() == 'open':
+   if adv_python.get_seats() > 0:
       print()
-      print("Student Name: ", student.get_name())
+      print("Student Name: ", s.get_name())
       print("Course Number: ", adv_python.get_name())
       print("CRN: ", adv_python.get_crn())
-      print("Seats Left: ", adv_python.update_seat_count())
+      print("Seats Left: ", adv_python.get_seats())
    else:
-      print("Sorry" , student.get_name(), "registration is closed for" , adv_python.get_name())
+      print("Sorry" , s.get_name(), "registration is closed for" , adv_python.get_name())
 
   
     
